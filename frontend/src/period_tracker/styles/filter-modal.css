@@ -1,0 +1,175 @@
+/* Custom scrollbar hiding for horizontal scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cycle length filter horizontal scroll styles */
+.cycle-length-container {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  margin: 0 -0.25rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.cycle-length-container::-webkit-scrollbar {
+  height: 0;
+}
+
+.cycle-length-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cycle-length-container::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Button hover and focus states for better interactivity */
+.cycle-length-button {
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  min-width: fit-content;
+  font-weight: 500;
+}
+
+.cycle-length-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cycle-length-button:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Ensure consistent button styling */
+.cycle-length-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transitions for all interactive elements */
+.filter-modal-transition {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Protein slider styles */
+.filter-protein-slider [data-radix-slider-track] {
+  background-color: #E5E7EB !important;
+}
+
+.filter-protein-slider [data-radix-slider-range] {
+  background-color: #2563EB !important;
+}
+
+.filter-protein-slider [data-radix-slider-thumb] {
+  border-color: #2563EB !important;
+  background-color: white !important;
+}
+
+/* Protein slider track styling */
+.filter-protein-slider-track {
+  background-color: #2563EB !important;
+}
+
+/* Comprehensive slider styling for blue color #2563EB */
+.filter-protein-slider [data-radix-slider-range] {
+  background-color: #2563EB !important;
+}
+
+.filter-protein-slider [role="slider"] {
+  background-color: #2563EB !important;
+}
+
+.filter-protein-slider .bg-primary {
+  background-color: #2563EB !important;
+}
+
+.filter-protein-slider [data-state="active"] {
+  background-color: #2563EB !important;
+}
+
+/* Specific styling for protein slider blue theme */
+.protein-slider-blue .protein-slider [data-radix-slider-range] {
+  background-color: #2563EB !important;
+}
+
+.protein-slider-blue [data-radix-slider-range] {
+  background-color: #2563EB !important;
+}
+
+.protein-slider-blue [role="slider"] {
+  background-color: #2563EB !important;
+}
+
+.protein-slider-blue .bg-primary {
+  background-color: #2563EB !important;
+}
+
+/* Slider track line styling */
+.protein-slider-blue [data-radix-slider-track] {
+  background-color: #e2e8f0;
+}
+
+.protein-slider-blue [data-radix-slider-range] {
+  background-color: #2563EB !important;
+  height: 4px;
+}
+
+/* Ensure thumb border is blue */
+.protein-slider-blue [data-radix-slider-thumb] {
+  border-color: #2563EB !important;
+  background-color: white;
+}
+
+/* Hide default select chevron when using custom icons */
+.hide-select-icon [data-radix-select-icon] {
+  display: none !important;
+}
+
+.hide-select-icon button[role="combobox"] > svg {
+  display: none !important;
+}
+
+/* Backdrop blur effect for modal overlay */
+.backdrop-blur-md {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Glassmorphism Effects for Cards and Popups */
+.card-popup-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.card-popup-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card-popup-dark {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-popup-mild {
+  background: rgba(200, 200, 200, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}

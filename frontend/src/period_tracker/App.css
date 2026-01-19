@@ -1,0 +1,281 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+/* ========================================
+   FILTER MODAL - GLASSMORPHISM EFFECT
+   ======================================== */
+
+/* Backdrop overlay with blur effect */
+.card-popup-overlay {
+  background: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(12px) saturate(180%) brightness(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(180%) brightness(1.1);
+  animation: fadeIn 0.3s ease-out;
+  will-change: backdrop-filter;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal card with glassmorphism */
+.card-popup-light {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
+  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), 
+              0 4px 16px rgba(0, 0, 0, 0.12),
+              inset 0 2px 2px rgba(255, 255, 255, 0.8) !important;
+  animation: slideUp 0.3s ease-out;
+  will-change: backdrop-filter, transform;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cycle Length Button Container - Horizontal Scroll */
+.cycle-length-container {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cycle Length Buttons */
+.cycle-length-button {
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.cycle-length-button:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
+}
+
+.cycle-length-button:active {
+  transform: scale(0.98);
+}
+
+/* Hide default select dropdown icons */
+.hide-select-icon [data-radix-select-trigger] > svg {
+  display: none !important;
+}
+
+/* Custom scrollbar for modal content */
+.card-popup-light::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card-popup-light::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.card-popup-light::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+.card-popup-light::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .card-popup-overlay {
+    align-items: flex-end !important;
+  }
+  
+  .card-popup-light {
+    border-radius: 24px 24px 0 0 !important;
+    max-height: 85vh !important;
+  }
+}
+
+/* Smooth transitions for buttons */
+.card-popup-light button {
+  transition: all 0.2s ease;
+}
+
+.card-popup-light button:active {
+  transform: scale(0.98);
+}
+
+/* Select dropdown positioning */
+[data-radix-popper-content-wrapper] {
+  z-index: 99999 !important;
+}
+
+/* Force hardware acceleration for better blur performance */
+.card-popup-overlay,
+.card-popup-light {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+/* ========================================
+   STACKED CARDS EFFECT - iOS STYLE
+   ======================================== */
+
+/* Base stacked card styling - VISIBLE CARDS */
+.stacked-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 30px;
+  background: #E8E8ED;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Third card (furthest back) - smallest and lowest */
+.stacked-card-3 {
+  width: calc(100% - 48px);
+  bottom: -25px;
+  opacity: 1;
+  z-index: 1;
+  background: #DADAE0;
+}
+
+/* Second card (middle) */
+.stacked-card-2 {
+  width: calc(100% - 24px);
+  bottom: -15px;
+  opacity: 1;
+  z-index: 2;
+  background: #E8E8ED;
+}
+
+/* First card (closest) - largest behind main */
+.stacked-card-1 {
+  width: calc(100% - 12px);
+  bottom: -8px;
+  opacity: 1;
+  z-index: 3;
+  background: #F0F0F5;
+}
+
+/* Main modal card - on top of everything */
+.modal-main-card {
+  position: relative;
+  z-index: 10;
+  background: white !important;
+}
+
+/* Pull Handle - Gray horizontal bar at top */
+.modal-pull-handle-container {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0 8px 0;
+  background: transparent;
+}
+
+.modal-pull-handle {
+  width: 36px;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Mobile adjustments - FORCE VISIBLE */
+@media (max-width: 640px) {
+  .stacked-card {
+    height: 28px !important;
+    display: block !important;
+  }
+  
+  .stacked-card-3 {
+    width: calc(100% - 60px) !important;
+    bottom: -28px !important;
+    background: #DADAE0 !important;
+  }
+  
+  .stacked-card-2 {
+    width: calc(100% - 30px) !important;
+    bottom: -16px !important;
+    background: #E8E8ED !important;
+  }
+  
+  .stacked-card-1 {
+    width: calc(100% - 15px) !important;
+    bottom: -8px !important;
+    background: #F0F0F5 !important;
+  }
+  
+  .modal-main-card {
+    border-radius: 24px 24px 0 0 !important;
+  }
+}
+
+.read-the-docs {
+  color: #888;
+}

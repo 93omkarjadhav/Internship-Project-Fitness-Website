@@ -1,0 +1,337 @@
+﻿/* ---------- Font Import ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');
+
+/* ---------- Page Layout ---------- */
+.snack-page {
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.left-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  filter: brightness(0) invert(1);
+}
+
+/* ---------- Central Card ---------- */
+.snack-card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  width: 90%;
+  max-width: 550px;
+  text-align: center;
+  padding: 40px 30px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* ---------- Logo ---------- */
+.snack-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.snack-logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+/* ---------- Heading (Now Regular, Not Bold) ---------- */
+.snack-card h2 {
+  font-size: 28px;
+  font-weight: 400;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #000;
+  margin-bottom: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+/* ---------- Scrollable Options ---------- */
+.options-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-height: 300px;
+  min-height: 220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e0 transparent;
+  position: relative;
+  padding-right: 8px;
+}
+
+.options-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.options-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.options-scroll::-webkit-scrollbar-thumb {
+  background-color: #cbd5e0;
+  border-radius: 3px;
+}
+
+.options-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #a0aec0;
+}
+
+/* ---------- Option Styling ---------- */
+.option {
+  border-radius: 14px;
+  padding: 14px 60px;
+  font-size: 20px;
+  cursor: pointer;
+  width: 80%;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #000;
+  background-color: transparent;
+  border: 1.5px solid transparent;
+}
+
+.option.selected {
+  color: #0066ff;
+  font-weight: 600;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  border: 1.5px solid #0066ff;
+  background-color: rgba(0, 102, 255, 0.05);
+}
+
+/* ---------- Depth Effect ---------- */
+.option.nearby { 
+  opacity: 1; 
+}
+
+.option.faded { 
+  opacity: 0.60; 
+}
+
+.option.more-faded { 
+  opacity: 0.6; 
+}
+
+/* ---------- Continue Button ---------- */
+.continue-btn3 {
+  width: 100%;
+  max-width: 360px;
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
+  margin-top: 25px;
+  box-shadow: 0 5px 18px rgba(0, 102, 255, 0.25);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.continue-btn3:hover { 
+  background-color: #0052cc; 
+}
+
+/* ---------- Modal ---------- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.modal-box {
+  background: white;
+  border-radius: 16px;
+  padding: 30px 40px;
+  text-align: center;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+}
+
+.modal-box h3 {
+  color: #1a1a1a;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.modal-box p {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.modal-btn {
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
+}
+
+.modal-btn:hover { 
+  background-color: #004ccc; 
+}
+
+/* ---------- Bottom Navigation ---------- */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: #444;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
+}
+
+.bottom-nav button.active {
+  color: #0066ff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* ---------- Responsive: Mobile View ---------- */
+@media (max-width: 480px) {
+  .snack-page { 
+    padding: 10px; 
+  }
+
+  .snack-card {
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    padding: 16px;
+    padding-bottom: 100px;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  .snack-card > button:first-of-type {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 20;
+  }
+
+  .snack-logo-container { 
+    justify-content: flex-start; 
+    margin: 50px 0 20px 0; 
+    width: 100%;
+  }
+
+  .snack-logo { 
+    width: 60px; 
+    height: 60px; 
+    margin: 0;
+  }
+
+  .snack-card h2 {
+    font-size: 1.3rem;
+    margin-left: 0;
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: 400;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    width: 100%;
+  }
+
+  .options-scroll { 
+    width: 100%; 
+    padding: 0 16px; 
+    gap: 10px; 
+    margin-bottom: 30px;
+    max-height: 350px;
+    min-height: auto;
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+
+  .option { 
+    font-size: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 10px 16px; 
+    width: 95%; 
+  }
+
+  .continue-btn3 { 
+    align-self: flex-end; 
+    margin-right: 16px; 
+    margin-top: 0; 
+    margin-bottom: 0;
+    width: auto; 
+    padding: 10px 20px; 
+    font-size: 14px; 
+    height: 40px; 
+    border-radius: 10px; 
+    box-shadow: none; 
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .bottom-nav button { 
+    font-size: 14px; 
+  }
+}

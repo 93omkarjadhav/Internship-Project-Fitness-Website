@@ -1,0 +1,92 @@
+/* ---------- Base Layout ---------- */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f9fbff;
+  font-family: "SF Pro Display", "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  overflow: hidden;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* ---------- Main Content ---------- */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.illustration {
+  width: 260px;
+  max-width: 80%;
+  margin-bottom: 25px;
+  height: auto;
+}
+
+/* ---------- Text ---------- */
+.home-content h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0c1b3d;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.home-content p {
+  font-size: 17px;
+  color: #6b7280;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* ---------- Button ---------- */
+.continue-btn3 {
+  background-color: #0059ff;
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 12px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.arrow-icon {
+  width: 22px;
+  height: 20px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .illustration {
+    width: 300px;
+    max-width: 90%;
+  }
+
+  .home-content h2 {
+    font-size: 26px;
+  }
+
+  .continue-btn3 {
+    width: 100%;
+  }
+}
+
+/* ---------- Small Devices ---------- */
+@media (max-width: 480px) {
+  .illustration {
+    width: 250px;
+  }
+}

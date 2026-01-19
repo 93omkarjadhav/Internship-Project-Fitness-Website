@@ -1,0 +1,23 @@
+/* Custom styles for react-joyride overlay to ensure grey background */
+/* Target all possible overlay classes used by react-joyride */
+[class*="react-joyride__overlay"],
+[class*="joyride-overlay"],
+div[style*="position: fixed"][style*="z-index"] {
+  background-color: rgba(100, 100, 100, 0.4) !important;
+  mix-blend-mode: normal !important;
+}
+
+/* Target the overlay container directly */
+body > div[style*="position: fixed"]:not([class*="tooltip"]) {
+  background-color: rgba(100, 100, 100, 0.4) !important;
+}
+
+/* Ensure spotlight/highlighted elements are visible and not dimmed */
+[class*="react-joyride__spotlight"],
+[class*="joyride-spotlight"],
+[data-joyride="spotlight"] {
+  mix-blend-mode: normal !important;
+  background-color: transparent !important;
+  box-shadow: 0 0 0 9999px rgba(100, 100, 100, 0.4) !important;
+}
+

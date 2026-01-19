@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- DNS Prefetch and Preconnect for Cloudinary CDN (critical for fast image loading) -->
+    <link rel="dns-prefetch" href="https://res.cloudinary.com">
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload auth page images for instant loading on login/signup -->
+    <link rel="preload" as="image" href="/image-1.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/image-2.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/forget-pass.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/ladki - Edited.png" fetchpriority="high">
+    <link rel="preload" as="image" href="/logo.png" fetchpriority="high">
+    <link rel="preload" as="image" href="/image.png" fetchpriority="high">
+    <link rel="preload" as="image" href="/sign-up.png" fetchpriority="high">
+    
+    <!-- Preload common club images from Cloudinary CDN with WebP format and optimized dimensions -->
+    <!-- f_webp: Force WebP format (30-50% smaller), q_auto:low: faster loading, w_600: smaller width, dpr_auto: auto device pixel ratio -->
+    <!-- Removed card-img.png preload due to Cloudinary URL failure - using local fallback instead -->
+    <!-- <link rel="preload" as="image" href="https://res.cloudinary.com/dbwflm25l/image/upload/f_webp,q_auto:low,w_600,c_limit,dpr_auto/v1767801943/fitfare/clubs/card-img.png" fetchpriority="high" crossorigin="anonymous"> -->
+    <link rel="preload" as="image" href="/card-img.png" fetchpriority="high">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dbwflm25l/image/upload/f_webp,q_auto:low,w_600,c_limit,dpr_auto/v1767801945/fitfare/clubs/gym-1.jpg" fetchpriority="high" crossorigin="anonymous">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dbwflm25l/image/upload/f_webp,q_auto:low,w_600,c_limit,dpr_auto/v1767801947/fitfare/clubs/gym-2.jpg" fetchpriority="high" crossorigin="anonymous">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dbwflm25l/image/upload/f_webp,q_auto:low,w_600,c_limit,dpr_auto/v1767801949/fitfare/clubs/gym-3.jpg" fetchpriority="high" crossorigin="anonymous">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dbwflm25l/image/upload/f_webp,q_auto:low,w_600,c_limit,dpr_auto/v1767801951/fitfare/clubs/gym-4.jpg" fetchpriority="high" crossorigin="anonymous">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dbwflm25l/image/upload/f_webp,q_auto:low,w_600,c_limit,dpr_auto/v1767801953/fitfare/clubs/gym-5.jpg" fetchpriority="high" crossorigin="anonymous">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dbwflm25l/image/upload/f_webp,q_auto:low,w_600,c_limit,dpr_auto/v1767801954/fitfare/clubs/gym-6.jpg" fetchpriority="high" crossorigin="anonymous">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dbwflm25l/image/upload/f_webp,q_auto:low,w_600,c_limit,dpr_auto/v1767801956/fitfare/clubs/gym-7.jpg" fetchpriority="high" crossorigin="anonymous">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dbwflm25l/image/upload/f_webp,q_auto:low,w_600,c_limit,dpr_auto/v1767801958/fitfare/clubs/gym-8.jpg" fetchpriority="high" crossorigin="anonymous">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dbwflm25l/image/upload/f_webp,q_auto:low,w_600,c_limit,dpr_auto/v1767801960/fitfare/clubs/gym-9.jpg" fetchpriority="high" crossorigin="anonymous">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dbwflm25l/image/upload/f_webp,q_auto:low,w_600,c_limit,dpr_auto/v1767801962/fitfare/clubs/gym-10.jpg" fetchpriority="high" crossorigin="anonymous">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dbwflm25l/image/upload/f_webp,q_auto:low,w_600,c_limit,dpr_auto/v1767801964/fitfare/clubs/gym-11.jpg" fetchpriority="high" crossorigin="anonymous">
+    
+    <!-- Razorpay Checkout Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    
+    <title>FitFare - Sign In to Access Fitness Clubs</title>
+    <meta name="description" content="Sign in to FitFare to access on-demand fitness clubs. Create an account or sign in with your email and password." />
+    <meta name="author" content="FitFare" />
+
+    <meta property="og:title" content="FitFare - Sign In to Access Fitness Clubs" />
+    <meta property="og:description" content="Sign in to FitFare to access on-demand fitness clubs" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <!-- Aggressive image preloader - runs immediately before React -->
+    <script>
+      // CRITICAL: Preload ALL auth images IMMEDIATELY before React loads
+      // ULTRA-AGGRESSIVE: Force images into browser cache with 30+ Image objects each
+      (function() {
+        const authImages = ['/image-1.webp', '/image-2.webp', '/forget-pass.webp', '/ladki - Edited.png', '/logo.png', '/image.png', '/sign-up.png'];
+        authImages.forEach(src => {
+          // Create MANY Image objects to force ULTRA-AGGRESSIVE browser caching (50x per image)
+          for (let i = 0; i < 50; i++) {
+            const img = new Image();
+            if ('fetchPriority' in img) {
+              img.fetchPriority = 'high';
+            }
+            img.src = src; // Force into browser cache immediately
+            // Set onload to ensure it's cached
+            img.onload = function() {
+              // Image is now in browser cache
+            };
+          }
+          // Also create link preload
+          const link = document.createElement('link');
+          link.rel = 'preload';
+          link.as = 'image';
+          link.href = src;
+          if ('fetchPriority' in link) {
+            link.fetchPriority = 'high';
+          }
+          document.head.appendChild(link);
+        });
+
+        // CRITICAL: Handle browser back/forward navigation - preload images BEFORE page restores
+        window.addEventListener('popstate', function(e) {
+          // Browser back/forward button pressed - preload images for current route
+          const pathname = window.location.pathname;
+          const routeImages = {
+            '/': ['/image-2.webp', '/logo.png', '/image.png', '/sign-up.png'],
+            '/signup': ['/image-1.webp', '/logo.png', '/image.png', '/sign-up.png'],
+            '/privacy-policy': ['/logo.png', '/image-1.webp', '/image.png', '/sign-up.png'],
+            '/forgot-password': ['/forget-pass.webp', '/logo.png'],
+            '/reset-password-email': ['/ladki - Edited.png', '/logo.png']
+          };
+          const imagesToPreload = routeImages[pathname] || [];
+          
+          // ULTRA-AGGRESSIVE preload (50x per image)
+          imagesToPreload.forEach(src => {
+            for (let i = 0; i < 50; i++) {
+              const img = new Image();
+              if ('fetchPriority' in img) {
+                img.fetchPriority = 'high';
+              }
+              img.src = src;
+            }
+          });
+        });
+
+        // Also handle pageshow (page restored from history cache)
+        window.addEventListener('pageshow', function(e) {
+          if (e.persisted) {
+            // Page was restored from cache - ensure images are cached
+            const pathname = window.location.pathname;
+            const routeImages = {
+              '/': ['/image-2.webp', '/logo.png', '/image.png', '/sign-up.png'],
+              '/signup': ['/image-1.webp', '/logo.png', '/image.png', '/sign-up.png'],
+              '/privacy-policy': ['/logo.png', '/image-1.webp', '/image.png', '/sign-up.png'],
+              '/forgot-password': ['/forget-pass.webp', '/logo.png'],
+              '/reset-password-email': ['/ladki - Edited.png', '/logo.png']
+            };
+            const imagesToPreload = routeImages[pathname] || [];
+            
+            imagesToPreload.forEach(src => {
+              for (let i = 0; i < 30; i++) {
+                const img = new Image();
+                if ('fetchPriority' in img) {
+                  img.fetchPriority = 'high';
+                }
+                img.src = src;
+              }
+            });
+          }
+        });
+      })();
+    </script>
+    <script type="module" src="/src/utils/aggressiveImagePreloader.ts"></script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

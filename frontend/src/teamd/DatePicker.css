@@ -1,0 +1,51 @@
+/* DatePicker.css
+     Plain CSS (not SCSS) — ensure selectors are valid CSS so browsers apply them.
+
+     We hide the native calendar icon visually but avoid creating a pseudo-element
+     that covers the whole page. The indicator is hidden and made non-interactive
+     (pointer-events:none) so it can't intercept clicks; the input itself still
+     handles clicks to open the native datepicker.
+*/
+
+.hide-calendar-icon {
+    position: relative; /* ensure any absolute children are positioned relative to the input */
+}
+
+.hide-calendar-icon::-webkit-calendar-picker-indicator {
+    opacity: 0;           /* visually hide */
+    pointer-events: none; /* don't intercept clicks */
+    width: 20px;          /* keep it small and not stretched */
+    height: 20px;
+}
+
+.hide-calendar-icon::-moz-calendar-picker-indicator {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Fallback: hide the clear button in some browsers if present */
+.hide-calendar-icon::-ms-clear {
+    display: none;
+}
+
+/* Smooth scrolling for date picker year selector */
+input[type="date"] {
+    scroll-behavior: smooth;
+}
+
+/* For native date picker - improve scrolling experience */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    scroll-behavior: smooth;
+}
+
+/* Apply smooth scrolling to all scrollable elements in date picker context */
+.hide-calendar-icon,
+input[type="date"] {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Additional smooth scrolling for better UX */
+* {
+    scroll-behavior: smooth;
+}
